@@ -30,7 +30,7 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 # Streamlit's default look is fine but plain. Injecting a small amount of
 # CSS via st.markdown(unsafe_allow_html=True) is the standard way to make a
-# Streamlit app feel more polished without leaving Python.
+# Streamlit app feel more polished without leaving Python....
 st.markdown(
     """
     <style>
