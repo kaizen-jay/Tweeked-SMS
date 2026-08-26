@@ -131,7 +131,7 @@ def render_student_card(enroll: str, info: dict):
 # selected decides which block of code below actually renders.
 page = st.sidebar.radio(
     "Navigate",
-    ["View All Students", "Get Student", "Add Student", "Update Student", "Delete Student"],
+    ["View All Students", "Add Student", "Update Student", "Delete Student", "Get Student"],
 )
 
 st.sidebar.markdown("---")
@@ -162,7 +162,7 @@ if page == "View All Students":
 # PAGE: GET STUDENT  ->  GET /student/{student_enroll}
 # ---------------------------------------------------------------------------
 elif page == "Get Student":
-    st.subheader("🔍 Look Up a Student")
+    st.subheader("Look Up a Student")
 
     enroll = st.text_input("Enrollment No.", placeholder="e.g. LNCFBTC00001")
 
@@ -180,7 +180,7 @@ elif page == "Get Student":
 # PAGE: ADD STUDENT  ->  POST /add
 # ---------------------------------------------------------------------------
 elif page == "Add Student":
-    st.subheader("➕ Add a New Student")
+    st.subheader("Add a New Student")
 
     # st.form batches all inputs together so the API is only called once,
     # on submit — not on every keystroke/widget interaction.
@@ -189,11 +189,11 @@ elif page == "Add Student":
         with col1:
             enroll = st.text_input("Enrollment No.*", placeholder="LNCFBTC00001")
             roll_no = st.text_input("Roll No.*", placeholder="001")
-            name = st.text_input("Name*")
+            name = st.text_input("Student's Name*")
             age = st.number_input("Age*", min_value=1, max_value=29, step=1)
             gender = st.selectbox("Gender*", ["Male", "Female", "Others"])
         with col2:
-            contact_no = st.text_input("Contact No.*", placeholder="9876543210")
+            contact_no = st.text_input("Contact No.*", placeholder="1234567890")
             father_name = st.text_input("Father's Name*")
             mother_name = st.text_input("Mother's Name*")
             course = st.text_input("Course*", placeholder="B.Tech")
@@ -232,7 +232,7 @@ elif page == "Add Student":
 # PAGE: UPDATE STUDENT  ->  PUT /edit/{student_enroll}
 # ---------------------------------------------------------------------------
 elif page == "Update Student":
-    st.subheader("✏️ Update a Student")
+    st.subheader("Update a Student")
 
     enroll = st.text_input("Enrollment No. of student to update*", placeholder="LNCFBTC00001")
 
@@ -245,7 +245,7 @@ elif page == "Update Student":
         col1, col2 = st.columns(2)
         with col1:
             roll_no = st.text_input("Roll No.")
-            name = st.text_input("Name")
+            name = st.text_input("Student's Name")
             age = st.text_input("Age", placeholder="leave blank to skip")
             gender = st.selectbox("Gender", ["(no change)", "Male", "Female", "Others"])
         with col2:
@@ -302,7 +302,7 @@ elif page == "Update Student":
 # PAGE: DELETE STUDENT  ->  DELETE /delete/{student_enroll}
 # ---------------------------------------------------------------------------
 elif page == "Delete Student":
-    st.subheader("🗑️ Delete a Student")
+    st.subheader("Delete a Student")
 
     enroll = st.text_input("Enrollment No. of student to delete*", placeholder="LNCFBTC00001")
 
