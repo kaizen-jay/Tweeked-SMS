@@ -225,7 +225,6 @@ elif page == "Add Student":
             ok, data = api_call("POST", "/add", json=payload)
             if ok:
                 st.success(data.get("message", "Student added."))
-                st.balloons()
             else:
                 st.error(data)
 
