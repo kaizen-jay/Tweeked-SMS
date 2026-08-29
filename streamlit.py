@@ -172,7 +172,7 @@ elif page == "Get Student":
         else:
             ok, data = api_call("GET", f"/student/{enroll.strip()}")
             if ok:
-                render_student_card(enroll.strip(), data)
+                render_student_card(enroll.strip(), data)#....
             else:
                 st.error(data)
 
