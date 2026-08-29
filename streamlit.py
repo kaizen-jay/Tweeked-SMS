@@ -172,7 +172,7 @@ elif page == "Get Student":
         else:
             ok, data = api_call("GET", f"/student/{enroll.strip()}")
             if ok:
-                render_student_card(enroll.strip(), data)#....
+                render_student_card(enroll.strip(), data)
             else:
                 st.error(data)
 
@@ -196,7 +196,7 @@ elif page == "Add Student":
             contact_no = st.text_input("Contact No.*", placeholder="1234567890")
             father_name = st.text_input("Father's Name*")
             mother_name = st.text_input("Mother's Name*")
-            course = st.text_input("Course*", placeholder="B.Tech")
+            course = st.text_input("Course*", placeholder="B.Tech")#,,,
             city = st.text_input("City*")
 
         submitted = st.form_submit_button("Add Student")
