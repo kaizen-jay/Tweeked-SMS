@@ -182,9 +182,7 @@ def update_student(student_enroll: str, student_update: StudentUpdate):
     return JSONResponse(status_code=200, content={"message": "Student updated"})
 
 
-# ---------------------------------------------------------------------------
-# DELETE endpoint
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------------- ---------------------------------------------------------------------------
 @app.delete("/delete/{student_enroll}")
 def delete_student(student_enroll: str):
     """Delete a student record by enrollment number."""
@@ -206,4 +204,4 @@ def delete_student(student_enroll: str):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("sms:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("sms:app", host="127.0.0.1", port=8000, reload=True)  
