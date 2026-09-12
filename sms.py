@@ -204,4 +204,4 @@ def delete_student(student_enroll: str):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("sms:app", host="127.0.0.1", port=8000, reload=True) kk 
+    uvicorn.run("sms:app", host="127.0.0.1", port=8000, reload=True)
